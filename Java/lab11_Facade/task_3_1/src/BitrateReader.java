@@ -1,3 +1,5 @@
+package task_3_1.src;
+
 public class BitrateReader {
 
     /**

@@ -1,3 +1,5 @@
+package task_3_1.src;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -15,13 +17,17 @@ public class Main {
         // конвертацію "youtubevideo.ogg" з формату "ogg" у формат "mp4"
 
         System.out.println("\n======= VideoConversionFacade: conversion started. =======");
-        Codec sourceCodec = CodecFactory.extract(videoFile);
+        // Codec sourceCodec = CodecFactory.extract(videoFile);
 
+        VideoConversion convertor = new VideoConversion();
         Codec destinationCodec = new MPEG4CompressionCodec();
-        Buffer buffer = BitrateReader.read(videoFile, sourceCodec);
-        VideoFile videoFileConverted = BitrateReader.convert(buffer, videoFile.getName(), destinationCodec);
-        AudioMixer audioMixer = new AudioMixer();
-        audioMixer.fix(videoFileConverted, videoFile.getAudioBuffer());
+        VideoFile videoFileConverted = convertor.convert(videoFile, destinationCodec);
+
+        // Codec destinationCodec = new MPEG4CompressionCodec();
+        // Buffer buffer = BitrateReader.read(videoFile, sourceCodec);
+        // VideoFile videoFileConverted = BitrateReader.convert(buffer, videoFile.getName(), destinationCodec);
+        // AudioMixer audioMixer = new AudioMixer();
+        // audioMixer.fix(videoFileConverted, videoFile.getAudioBuffer());
 
         System.out.println("====== VideoConversionFacade: conversion completed =======\n");
         videoFileConverted.play(new MPEG4CompressionCodec());
