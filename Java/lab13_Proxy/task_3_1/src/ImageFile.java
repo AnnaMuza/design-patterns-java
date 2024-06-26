@@ -1,3 +1,5 @@
+package task_3_1.src;
+
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
