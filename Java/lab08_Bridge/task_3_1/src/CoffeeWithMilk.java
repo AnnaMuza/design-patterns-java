@@ -1,9 +1,11 @@
+package task_3_1.src;
+
 public class CoffeeWithMilk extends Coffee {
 
     private final int milkVolume;
 
-    public CoffeeWithMilk(int sugar, int milkVolume) {
-        super(sugar);
+    public CoffeeWithMilk(int sugar, BeverageType type, int milkVolume) {
+        super(sugar, type);
         this.milkVolume = milkVolume;
     }
 

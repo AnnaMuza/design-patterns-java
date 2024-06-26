@@ -1,7 +1,15 @@
-public abstract class DropdownButton extends Button {
+package task_3_2.src;
 
-  public void draw() {
-    System.out.println("Drawing a dropdown button.\n");
-  }
+public class DropdownButton extends Button {
+
+    public DropdownButton(Size size) {
+        super(size);
+    }
+
+    @Override
+    public void draw() {
+        System.out.println("Setting size to " + size.getSize() + "...");
+        System.out.println("Drawing a dropdown button.\n");
+    }
 
 }

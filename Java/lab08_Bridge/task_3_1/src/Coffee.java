@@ -1,6 +1,8 @@
+package task_3_1.src;
+
 public abstract class Coffee extends Beverage {
-    public Coffee(int sugar) {
-        super(sugar);
+    public Coffee(int sugar, BeverageType type) {
+        super(sugar, type);
     }
 
     @Override

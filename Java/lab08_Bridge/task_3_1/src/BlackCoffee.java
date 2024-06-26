@@ -1,10 +1,12 @@
+package task_3_1.src;
+
 public class BlackCoffee extends Coffee {
 
     final private boolean extra_coffee;
     private final int water_volume;
 
-    public BlackCoffee(int sugar, int water_volume, boolean extra_coffee) {
-        super(sugar);
+    public BlackCoffee(int sugar, BeverageType type, int water_volume, boolean extra_coffee) {
+        super(sugar, type);
         this.water_volume = water_volume;
         this.extra_coffee = extra_coffee;
     }

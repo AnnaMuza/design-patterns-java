@@ -1,6 +1,8 @@
+package task_3_1.src;
+
 public abstract class Tee extends Beverage {
-    public Tee(int sugar) {
-        super(sugar);
+    public Tee(int sugar, BeverageType type) {
+        super(sugar, type);
     }
 
     @Override
