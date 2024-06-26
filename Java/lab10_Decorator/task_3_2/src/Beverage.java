@@ -1,3 +1,5 @@
+package task_3_2.src;
+
 abstract public class Beverage {
 
     public abstract String description();
