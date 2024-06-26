@@ -1,4 +1,9 @@
+package task_3_1.src;
+
 public class CarBuilder {
+
+    private final EngineFlyweightFactory engineFlyweightFactory = new EngineFlyweightFactory();
+    private final WheelFlyweightFactory wheelFlyweightFactory = new WheelFlyweightFactory();
 
     public CarBuilder setType(Car.Type type) {
         this.type = type;
@@ -10,13 +15,13 @@ public class CarBuilder {
         return this;
     }
 
-    public CarBuilder setEngine(Engine engine) {
-        this.engine = engine;
+    public CarBuilder setEngine(int power, Engine.Fuel fuel) {
+        this.engine = engineFlyweightFactory.getEngine(power, fuel);
         return this;
     }
 
-    public CarBuilder setWheel(Wheel wheel) {
-        this.wheel = wheel;
+    public CarBuilder setWheel(int diameter) {
+        this.wheel = wheelFlyweightFactory.getWheel(diameter);
         return this;
     }
 
@@ -28,8 +33,8 @@ public class CarBuilder {
     public CarBuilder reset() {
         type = Car.Type.Sedan;
         carColor = Car.CarColor.White;
-        engine = new Engine(105, Engine.Fuel.Petrol);
-        wheel = new Wheel(17);
+        engine = engineFlyweightFactory.getEngine(105, Engine.Fuel.Petrol);
+        wheel = wheelFlyweightFactory.getWheel(17);
         return this;
     }
 

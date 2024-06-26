@@ -1,3 +1,5 @@
+package task_3_1.src;
+
 public class Wheel {
     public enum Material {
         Steel, //  стальний диск

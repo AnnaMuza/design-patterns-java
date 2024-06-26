@@ -1,3 +1,5 @@
+package task_3_1.src;
+
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.concurrent.Executors;
@@ -32,8 +34,8 @@ public class CarSimulator {
     Car car = carBuilder
             .reset()
             .setCarColor(color)
-            .setEngine(new Engine(power, fuel))
-            .setWheel(new Wheel(wheel_diameter))
+            .setEngine(power, fuel)
+            .setWheel(wheel_diameter)
             .build();
     System.out.println("Creating " + car);
     car.showInfo();
