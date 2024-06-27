@@ -1,5 +1,6 @@
-public class Manager {
+package task_3_1.src;
 
+public class Manager implements Employee {
     private final String name;
     private final int salary;
 
@@ -8,6 +9,7 @@ public class Manager {
         this.salary = salary;
     }
 
+    @Override
     public void payExpenses() {
         System.out.println(name + " has been paid $" + salary);
     }
