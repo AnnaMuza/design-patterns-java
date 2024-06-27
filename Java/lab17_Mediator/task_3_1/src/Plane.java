@@ -3,52 +3,30 @@
  */
 public class Plane {
 
-  /**
-   * Чи злетів літак
-   */
   private boolean isInTheAir;
-
-  /**
-   * Ідентифікатор літака
-   */
-  private int id;
-
-  /**
-   * Злітно-посадкова смуга
-   */
-  private Runway runway;
-
-  /**
-   * Список літаків у польоті
-   */
-  private PlanesInFlight planesInFlight;
-
-  /**
-   * Список літаків, що приземлилися
-   */
-  private PlanesOnGround planesOnGround;
+  private final int id;
+  private final Mediator mediator;
 
 
-  public Plane(int id) {
+  public Plane(int id, Mediator mediator) {
     this.id = id;
+    this.mediator = mediator;
     isInTheAir = false;
-    runway = new Runway();
-    planesInFlight = new PlanesInFlight();
-    planesOnGround = new PlanesOnGround();
-    planesOnGround.addPlane(this);
+    ((FlightControlMediator) mediator).addPlane(this);
   }
 
   /**
    * Зліт літака
    */
   public void takeOff() {
-    if(!isInTheAir && runway.getIsAvailable()) {
-      System.out.println("Plane " + id + " is taking off...");
-      planesOnGround.removePlane(this);
-      planesInFlight.addPlane(this);
-      setIsInTheAir(true);
-      runway.setIsAvailable(false);
-    }
+    mediator.notify(Event.TAKE_OFF, id);
+  }
+
+  /**
+   * Приземлення літака
+   */
+  public void land() {
+    mediator.notify(Event.LAND, id);
   }
 
   /**
