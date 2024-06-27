@@ -11,10 +11,9 @@ public class Main {
     staffList.addEmployee(sarah);
     staffList.addEmployee(anna);
 
-          // TODO: Implement pattern to run commented code
-//    for (Employee employee : StaffList){
-//      System.out.println(employee);
-//    }
+    for (Employee employee : staffList){
+        System.out.println(employee);
+    }
 
   }
 
